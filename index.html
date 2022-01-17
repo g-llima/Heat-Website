@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>HEAT - Dev the Devs</title>
+    <link rel="shortcut icon" href="./imgs/heat.png">
+    <link rel="stylesheet" href="styles.css">
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="weather-container" id="weatherBackground">
+        <a href="https://tecnopuc.pucrs.br" target="_blank"><h4 class="heat">HEAT</h4></a>
+        <div class="error-container"><i class="fas fa-exclamation-triangle" id="errorTriangle" onmouseenter="hoverErrorShow()" onmouseleave="hoverErrorHide()"></i>
+            <p id="errorMsg" class="error-msg hidden">Localização não encontrada</p>
+        </div>
+            <div class="weather-text-container">
+                <h1 id="city-temp">XX°</h1>
+                <div class="weather-data-container">
+                    <div class="weather-desc-container" id="cityDescContainer">
+                        <h2 id="city-name">XXXX</h2>
+                        <p id="city-time"><span id="city-time-hour">06</span>:<span id="city-time-minutes">09</span> - <span id="week-day">Monday</span>, <span id="month-day">9</span> <span id="month">Sep</span>. <span id="ano">19</span></p>
+                    </div>
+                    <div class="weather-status-container">
+                        <img id="city-weather-icon" src="#" alt="icone">
+                        <p id="city-desc">Cloudy</p>
+                    </div>
+                </div>
+            </div>
+        <div class="weather-info-container" id="weather-info-container">
+                <form class="input-container" id="form">
+                    <input id="search-input" type="text" class="search-input" placeholder="Outra localização">
+                    <button onclick="inputSend()" value="false" type="submit" class="search-button" id="search-button"><i class="fas fa-search"></i></button>
+                </form>
+                <ul class="examples-container">
+                    <li class="example-city">Birmingham</li>
+                    <li class="example-city">Manchester</li>
+                    <li class="example-city">New York</li>
+                    <li class="example-city">San Francisco</li>
+                </ul>
+                <hr>
+                <p class="weather-details-title" id="weatherDetailsTitle">Detalhes do clima</p>
+                <ul class="weather-details-container">
+                    <li class="weather-detail">
+                        <p>Nuvens</p>
+                        <p id="cloudly">86%</p>
+                    </li>
+                    <li class="weather-detail">
+                        <p>Umidade</p>
+                        <p id="humidity">86%</p>
+                    </li>
+                    <li class="weather-detail">
+                        <p>Pressão</p>
+                        <p id="pressure">1000.12hPa</p>
+                    </li>
+                    <li class="weather-detail">
+                        <div>
+                            <p>Vento</p>
+                            <i class="fas fa-long-arrow-alt-down" id="wind-arrow"></i>
+                        </div>
+                        <p id="wind">8km/h</p>
+                    </li>
+                </ul>
+                <hr>
+                <ul class="next-days-container">
+                    <li class="next-day">
+                        <img class="ndi" id="nd1" src="#" alt="icone">
+                        <div class="next-day-texts">
+                            <p id="ndt1" class="temp-nd-max">30°</p>
+                            <p id="ndtMin1" class="temp-nd-min">26°</p>
+                            <p id="ndtPre1" class="temp-nd-pre">20%</p>
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <p class="next-day-week-day" id="weekDayText1">Segunda-feira</p>
+                    </li>
+                    <li class="next-day">
+                        <img class="ndi"  id="nd2" src="#" alt="icone">
+                        <div class="next-day-texts">
+                            <p id="ndt2" class="temp-nd-max">30°</p>
+                            <p id="ndtMin2" class="temp-nd-min">26°</p>
+                            <p id="ndtPre2" class="temp-nd-pre">20%</p>
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <p class="next-day-week-day" id="weekDayText2">Segunda-feira</p>
+                    </li>
+                    <li class="next-day">
+                        <img class="ndi" id="nd3" src="#" alt="icone">
+                        <div class="next-day-texts">
+                            <p id="ndt3" class="temp-nd-max">30°</p>
+                            <p id="ndtMin3" class="temp-nd-min">26°</p>
+                            <p id="ndtPre3" class="temp-nd-pre">20%</p>
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <p class="next-day-week-day" id="weekDayText3">Segunda-feira</p>
+                    </li>
+                    <li class="next-day">
+                        <img class="ndi" id="nd4" src="#" alt="icone">
+                        <div class="next-day-texts">
+                            <p id="ndt4" class="temp-nd-max">30°</p>
+                            <p id="ndtMin4" class="temp-nd-min">26°</p>
+                            <p id="ndtPre4" class="temp-nd-pre">20%</p>
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <p class="next-day-week-day" id="weekDayText4">Segunda-feira</p>
+                    </li>
+                    <li class="next-day">
+                        <img class="ndi" id="nd5" src="#" alt="icone">
+                        <div class="next-day-texts">
+                            <p id="ndt5" class="temp-nd-max">30°</p>
+                            <p id="ndtMin5" class="temp-nd-min">26°</p>
+                            <p id="ndtPre5" class="temp-nd-pre">20%</p>
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <p class="next-day-week-day" id="weekDayText5">Segunda-feira</p>
+                    </li>
+                    <li class="next-day">
+                        <img class="ndi" id="nd6" src="#" alt="icone">
+                        <div class="next-day-texts">
+                            <p id="ndt6" class="temp-nd-max">30°</p>
+                            <p id="ndtMin6" class="temp-nd-min">26°</p>
+                            <p id="ndtPre6" class="temp-nd-pre">20%</p>
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <p class="next-day-week-day" id="weekDayText6">Segunda-feira</p>
+                    </li>
+                    <li class="next-day">
+                        <img class="ndi" id="nd7" src="#" alt="icone">
+                        <div class="next-day-texts">
+                            <p id="ndt7" class="temp-nd-max">30°</p>
+                            <p id="ndtMin7" class="temp-nd-min">26°</p>
+                            <p id="ndtPre7" class="temp-nd-pre">20%</p>
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <p class="next-day-week-day" id="weekDayText7">Segunda-feira</p>
+                    </li>
+                </ul>
+        </div>
+    </div>
+    <div id="loading"></div>
+<script src="script.js"></script>
+</body>
+</html>
