@@ -267,8 +267,6 @@ function setDate(dataCidade) {
   const utc = dataCidade["timezone"] / 3600;
   let windSpeed = dataCidade.wind.speed * 3.6;
 
-  console.log(dataCidade);
-
   date.setHours(date.getHours() + userUtc);
   date.setHours(date.getHours() + utc);
 
