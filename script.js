@@ -97,18 +97,11 @@ input.addEventListener("change", (e) => {
   value = e.target.value;
 });
 
-exampleCities[0].addEventListener("click", () => {
-  exampleCitiesClick(exampleCities[0].innerText);
-});
-exampleCities[1].addEventListener("click", () => {
-  exampleCitiesClick(exampleCities[1].innerText);
-});
-exampleCities[2].addEventListener("click", () => {
-  exampleCitiesClick(exampleCities[2].innerText);
-});
-exampleCities[3].addEventListener("click", () => {
-  exampleCitiesClick(exampleCities[3].innerText);
-});
+for (let i = 0; i <= 3; i++) {
+  exampleCities[i].addEventListener("click", () => {
+    exampleCitiesClick(exampleCities[i].innerText);
+  });
+}
 
 function delay() {
   setVisible(".weather-container", false);
@@ -550,7 +543,7 @@ function backgroundImageChanger(dataCidade) {
 
 function resetColors() {
   input.style.backgroundColor = "transparent";
-  weatherInfo.style.background = "rgba(78, 78, 78, 0.2)";
+  weatherInfo.style.background = "rgba(78, 78, 78, 0.6)";
   weatherBackground.style.backgroundPositionY = "0px";
   weatherDetailsTitle.style.color = "white";
   cityDescContainer.style.color = "white";

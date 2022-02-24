@@ -45,6 +45,9 @@
   padding: 1rem;
   cursor: default;
   transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
 }
 .weather-text-container {
   bottom: 10rem;
@@ -109,7 +112,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: rgba(78, 78, 78, 0.2);
+  background: rgba(78, 78, 78, 0.5);
   backdrop-filter: blur(15px);
   overflow-x: hidden;
   overflow-y: auto;
@@ -133,6 +136,9 @@
 }
 .fa-search {
   transition: all 0.1s;
+  -o-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -webkit-transition: all 0.1s;
   color: white;
 }
 .search-input {
@@ -158,7 +164,10 @@
   width: 0;
   bottom: 0px;
   position: absolute;
-  transition: 0.4s all;
+  transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
 }
 
 .input-container::before {
@@ -179,7 +188,10 @@ hr {
   margin: 3rem 0;
   cursor: pointer;
   color: rgb(197, 197, 197);
-  transition: color 0.1s;
+  transition: all 0.1s;
+  -o-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -webkit-transition: all 0.1s;
   width: 100px;
 }
 .example-city:hover {
@@ -224,6 +236,16 @@ hr {
   background-color: rgba(90, 90, 90, 0.2);
   padding: 10px;
   border-radius: 5px;
+  transition: all 0.1s;
+  -o-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+.next-day:hover {
+  transform: scale(1.1);
+}
+.next-day:hover .ndi {
+  transform: rotate(10deg);
 }
 .next-day-texts {
   display: flex;
@@ -245,6 +267,10 @@ hr {
 .ndi {
   width: 100px;
   margin: 0 auto;
+  transition: all 0.1s;
+  -o-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -webkit-transition: all 0.1s;
 }
 .next-day-week-day {
   margin: 1rem 0;
